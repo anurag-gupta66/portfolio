@@ -16,18 +16,21 @@
 <style>
 :root{--navy:#0c1a33;--navy2:#13264a;--ink:#0f1b33;--body:#44506a;--bg:#f6f8fb;--card:#fff;--line:#e2e8f1;--blue:#1f5eff;--cyan:#42c6ff;--r:14px;--f:'Manrope','Segoe UI',system-ui,-apple-system,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{font-family:var(--f);color:var(--body);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:84px;font-size:106.25%}
+body{font-family:var(--f);color:var(--body);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
 a{color:var(--blue)}
 :focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
 /* nav */
 nav{position:sticky;top:0;z-index:20;background:rgba(12,26,51,.92);backdrop-filter:blur(10px)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:-.01em}
 .logo i{font-style:normal;color:var(--cyan)}
 nav ul{display:flex;gap:26px;list-style:none}
-nav ul a{color:#b9c6e0;text-decoration:none;font-size:.93rem;font-weight:500}
+nav ul a{color:#b9c6e0;text-decoration:none;font-size:1rem;font-weight:600;position:relative;padding:4px 0;transition:color .2s}
+nav ul a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav ul a:hover::after,nav ul a.act::after{transform:scaleX(1)}
+nav ul a.act{color:#fff}
 nav ul a:hover{color:#fff}
 .navcta{background:var(--cyan);color:var(--navy);font-weight:700;font-size:.9rem;padding:8px 18px;border-radius:999px;text-decoration:none}
 /* hero */
@@ -35,9 +38,9 @@ nav ul a:hover{color:#fff}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
 .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(66,198,255,.12);border:1px solid rgba(66,198,255,.35);color:#9fe1ff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:22px}
 .badge b{width:8px;height:8px;border-radius:50%;background:#3ee08f;box-shadow:0 0 0 4px rgba(62,224,143,.2)}
-.hero h1{color:#fff;font-size:clamp(2.4rem,6vw,3.9rem);line-height:1.05;letter-spacing:-.035em;font-weight:800}
-.hero h2{color:var(--cyan);font-size:1.3rem;font-weight:600;margin:12px 0 20px;letter-spacing:-.01em}
-.hero p{max-width:54ch;font-size:1.06rem}
+.hero h1{color:#fff;font-size:clamp(2.6rem,7vw,4.4rem);line-height:1.05;letter-spacing:-.035em;font-weight:800}
+.hero h2{color:var(--cyan);font-size:1.4rem;font-weight:600;margin:12px 0 20px;letter-spacing:-.01em}
+.hero p{max-width:54ch;font-size:1.15rem}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn{display:inline-block;padding:13px 24px;border-radius:12px;font-weight:700;font-size:.96rem;text-decoration:none;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
@@ -56,13 +59,13 @@ nav ul a:hover{color:#fff}
 .stats{margin-top:-44px;position:relative;z-index:2}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:0 10px 30px rgba(12,26,51,.08)}
-.stat b{display:block;color:var(--ink);font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
-.stat span{font-size:.88rem}
+.stat b{display:block;color:var(--ink);font-size:1.3rem;font-weight:800;letter-spacing:-.02em}
+.stat span{font-size:.95rem}
 /* sections */
 section{padding:84px 0 0}
 .sh{margin-bottom:32px}
-.sh h2{color:var(--ink);font-size:2rem;letter-spacing:-.03em;font-weight:800}
-.sh p{margin-top:6px;max-width:62ch}
+.sh h2{color:var(--ink);font-size:2.2rem;letter-spacing:-.03em;font-weight:800}
+.sh p{margin-top:8px;max-width:62ch;font-size:1.08rem}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
 .job{display:grid;grid-template-columns:200px 1fr;gap:32px}
 .job .when{color:var(--blue);font-weight:700}
@@ -70,14 +73,14 @@ section{padding:84px 0 0}
 .job .where{font-size:.9rem}
 .job h3{color:var(--ink);font-size:1.2rem;font-weight:800;margin-bottom:14px}
 .job ul{list-style:none}
-.job li{position:relative;padding-left:22px;margin-bottom:12px}
+.job li{position:relative;padding-left:24px;margin-bottom:14px;font-size:1.04rem}
 .job li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:2px;background:var(--cyan)}
 .job li strong{color:var(--ink)}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .proj{display:flex;flex-direction:column}
 .proj h3{color:var(--ink);font-size:1.2rem;font-weight:800;margin-bottom:10px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.tags span,.chips span{background:#eaf1ff;color:#1448c8;border-radius:8px;padding:3px 11px;font-size:.82rem;font-weight:700}
+.tags span,.chips span{background:#eaf1ff;color:#1448c8;border-radius:9px;padding:4px 13px;font-size:.88rem;font-weight:700}
 .proj p{margin-bottom:18px}
 .proj a.l{margin-top:auto;font-weight:700;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
 .proj a.l:hover{text-decoration:underline}
@@ -87,18 +90,65 @@ section{padding:84px 0 0}
 .certs{list-style:none}
 .certs li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:nowrap}
 .certs li>div{flex:1;min-width:0}
-.certs li span{display:block;font-size:.88rem}
-.cv{font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap;flex:none;border:1px solid var(--line);border-radius:999px;padding:5px 14px}
+.certs li span{display:block;font-size:.95rem}
+.cv{font-weight:700;font-size:.92rem;text-decoration:none;white-space:nowrap;flex:none;border:1px solid var(--line);border-radius:999px;padding:5px 14px}
 .cv:hover{border-color:var(--blue);background:#eaf1ff}
 .certs li:last-child{border:0}
 .certs b{color:var(--ink)}
-.edu h3{color:var(--ink);font-size:1.15rem;font-weight:800}
+.edu{display:flex;flex-direction:column;justify-content:center}
+.eicon{width:48px;height:48px;border-radius:12px;background:#eaf1ff;display:grid;place-items:center;margin-bottom:16px}
+.eicon svg{width:26px;height:26px;fill:var(--blue)}
+.ey{color:var(--blue);font-weight:700;font-size:.9rem}
+.edu h3{color:var(--ink);font-size:1.2rem;font-weight:800;line-height:1.35;margin:2px 0 4px}
+.eu{font-weight:600}
+.eline{height:1px;background:var(--line);margin:18px 0}
 /* contact */
 .contact{margin-top:84px;background:linear-gradient(180deg,var(--navy),var(--navy2));color:#cfd9ee;padding:80px 0;text-align:center}
 .contact h2{color:#fff;font-size:2.3rem;letter-spacing:-.03em;font-weight:800}
 .contact p{max-width:52ch;margin:12px auto 28px}
 .contact .social{justify-content:center}
 footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size:.88rem}
+
+/* section numbers + italic accent */
+.sn{color:var(--blue);font-weight:800;font-size:.95rem;letter-spacing:.18em;margin-bottom:6px}
+.sh h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--cyan));margin-top:12px}
+/* about */
+.about{max-width:860px}
+.about p{font-size:1.12rem;margin-bottom:18px}
+.facts{list-style:none}
+.facts li{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:14px}
+.facts li:last-child{border:0}
+.facts b{color:var(--ink)}
+.facts span{text-align:right}
+/* animation */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
+.o1{width:380px;height:380px;background:#1f5eff;top:-120px;right:8%;animation:float 11s ease-in-out infinite}
+.o2{width:300px;height:300px;background:#42c6ff;bottom:-140px;left:-60px;opacity:.28;animation:float 14s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,26px)}}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.up{animation:up .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*.12s + .1s)}
+.badge b{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(62,224,143,.6)}70%{box-shadow:0 0 0 10px rgba(62,224,143,0)}100%{box-shadow:0 0 0 0 rgba(62,224,143,0)}}
+.snippet{animation:up .9s .45s cubic-bezier(.2,.7,.2,1) both,bob 6s 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.ln{display:block;opacity:0;animation:type .5s forwards;animation-delay:calc(var(--d)*1s + .9s)}
+@keyframes type{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+.cur{display:inline-block;width:8px;height:1em;background:var(--cyan);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:50}
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rd,0s)}
+.js .rv.in{opacity:1;transform:none}
+.proj,.skill,.stat,.edu,.job,.certs-card{transition:transform .3s,box-shadow .3s,border-color .3s}
+.proj:hover,.skill:hover,.stat:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(31,94,255,.14);border-color:#b9ccff}
+.chips span,.tags span{transition:transform .2s,background .2s}
+.chips span:hover,.tags span:hover{transform:translateY(-3px) scale(1.05);background:#dbe7ff}
+.social a{transition:transform .2s,border-color .2s,color .2s}.social a:hover{transform:translateY(-3px)}
+.certs li{transition:padding-left .25s}.certs li:hover{padding-left:8px}
+.btn.p:hover{box-shadow:0 10px 26px rgba(66,198,255,.4)}
+
+@media(prefers-reduced-motion:reduce){.up,.snippet,.ln,.orb,.badge b,.cur{animation:none!important;opacity:1!important}.js .rv{opacity:1;transform:none}}
 @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.snippet{max-width:520px}.stats .wrap{grid-template-columns:1fr 1fr}.job{grid-template-columns:1fr;gap:14px}nav ul{display:none}}
 @media(max-width:480px){.hero{padding:56px 0 80px}.stats .wrap{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -106,77 +156,81 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
 </style>
 </head>
 <body>
+<div id="bar"></div>
 <nav><div class="wrap">
   <a class="logo" href="#top">Anurag<i>.</i>Gupta</a>
-  <ul><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#credentials">Credentials</a></li></ul>
+  <ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#credentials">Credentials</a></li></ul>
   <a class="navcta" href="#contact">Hire me</a>
 </div></nav>
 
-<header class="hero" id="top"><div class="wrap">
+<header class="hero" id="top"><div class="orb o1"></div><div class="orb o2"></div><div class="wrap">
   <div>
-    <div class="badge"><b></b>Open to new opportunities</div>
-    <h1>Anurag Gupta</h1>
-    <h2>Digital Data &amp; Analytics Engineer</h2>
-    <p>I build the tracking that makes digital data trustworthy: Adobe Launch implementations, Adobe Experience Platform data flows and Customer Journey Analytics reports that show teams where users drop off. Two years of hands-on experience, currently delivering for a pharmaceutical client at Aloola.</p>
-    <div class="btns">
+    <div class="badge up" style="--i:0"><b></b>Open to new opportunities</div>
+    <h1 class="up" style="--i:1">Anurag Gupta</h1>
+    <h2 class="up" style="--i:2">Digital Data &amp; Analytics Engineer</h2>
+    <p class="up" style="--i:3">I build the tracking that makes digital data trustworthy: Adobe Launch implementations, Adobe Experience Platform data flows and Customer Journey Analytics reports that show teams where users drop off. Two years of hands-on experience, currently delivering for a pharmaceutical client at Aloola.</p>
+    <div class="btns up" style="--i:4">
       <a class="btn p" href="#contact">Get in touch</a>
       <a class="btn s" href="https://drive.google.com/file/d/1AVCk2FEeN_d_ddgoAx3JbU4vP9oj3EjH/view?usp=sharing" target="_blank" rel="noopener">Download resume</a>
     </div>
-    <div class="social">
+    <div class="social up" style="--i:5">
       <a href="https://www.linkedin.com/in/anurag-gupta66/" target="_blank" rel="noopener" aria-label="LinkedIn: anurag-gupta66"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>/anurag-gupta66</a>
       <a href="https://github.com/anurag-gupta66" target="_blank" rel="noopener" aria-label="GitHub: anurag-gupta66"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>/anurag-gupta66</a>
     </div>
   </div>
   <div class="snippet" aria-hidden="true">
     <div class="bar"><i></i><i></i><i></i>&nbsp; data-layer-example.js</div>
-<pre><span class="c">// Adobe Client Data Layer event</span>
-<span class="k">window</span>.adobeDataLayer.<span class="f">push</span>({
-  <span class="k">event</span>: <span class="s2">"cta_click"</span>,
-  <span class="k">eventInfo</span>: {
-    <span class="k">name</span>: <span class="s2">"Request a call"</span>,
-    <span class="k">location</span>: <span class="s2">"hero"</span>
-  }
-});
-<span class="c">// Launch rule → AEP datastream → CJA</span></pre>
+<pre><span class="ln" style="--d:0"><span class="c">// Adobe Client Data Layer event</span></span><span class="ln" style="--d:.35"><span class="k">window</span>.adobeDataLayer.<span class="f">push</span>({</span><span class="ln" style="--d:.7">  <span class="k">event</span>: <span class="s2">"cta_click"</span>,</span><span class="ln" style="--d:1.05">  <span class="k">eventInfo</span>: {</span><span class="ln" style="--d:1.4">    <span class="k">name</span>: <span class="s2">"Request a call"</span>,</span><span class="ln" style="--d:1.75">    <span class="k">location</span>: <span class="s2">"hero"</span></span><span class="ln" style="--d:2.1">  }</span><span class="ln" style="--d:2.4">});</span><span class="ln" style="--d:2.8"><span class="c">// Launch rule → AEP datastream → CJA</span> <span class="cur"></span></span></pre>
   </div>
 </div></header>
 
 <div class="stats"><div class="wrap">
-  <div class="stat"><b>2 years</b><span>Hands-on digital analytics</span></div>
-  <div class="stat"><b>Adobe CJA Developer</b><span>Certified</span></div>
-  <div class="stat"><b>Launch · AEP · CJA</b><span>Core Adobe stack</span></div>
-  <div class="stat"><b>SQL · Excel · Power BI</b><span>Analysis and reporting</span></div>
+  <div class="stat rv"><b><span data-count="2">0</span> years</b><span>Hands-on digital analytics</span></div>
+  <div class="stat rv"><b>Adobe CJA Developer</b><span>Certified</span></div>
+  <div class="stat rv"><b>Launch · AEP · CJA</b><span>Core Adobe stack</span></div>
+  <div class="stat rv"><b>SQL · Excel · Power BI</b><span>Analysis and reporting</span></div>
 </div></div>
 
 <main class="wrap">
+<section id="about">
+  <div class="sh rv"><div class="sn">01</div><h2>About Me</h2></div>
+  <div class="about">
+    <div class="rv">
+      <p>I’m a digital analytics professional based in Surat, Gujarat, with two years of hands-on experience implementing web data collection using Adobe Data Collection (Adobe Launch), the Adobe Client Data Layer and CSS selectors to capture user interactions.</p>
+      <p>I work with Adobe Experience Platform schemas and datastreams, and analyze customer journeys in Customer Journey Analytics. I turn business requirements into structured tracking setups and clear documentation, then use SQL, Advanced Excel and Power BI to turn complex data into insights teams can act on.</p>
+      <p>I communicate clearly and work well with cross-functional teams in fast-paced environments.</p>
+    </div>
+  </div>
+</section>
+
 <section id="experience">
-  <div class="sh"><h2>Experience</h2></div>
-  <div class="card job">
+  <div class="sh rv"><div class="sn">02</div><h2>Work Experience</h2></div>
+  <div class="card job rv">
     <div><div class="when">Nov 2024 – Present</div><div class="org">Aloola</div><div class="where">Software Engineer</div></div>
     <div>
       <h3>Software Engineer, Digital Data &amp; Analytics</h3>
       <ul>
-        <li><strong>Web data collection:</strong> designed and deployed tracking with Adobe Data Collection and Adobe Launch across multiple client websites for a pharmaceutical company, capturing page-level events and custom data. Tested every implementation to improve accuracy and close reporting gaps.</li>
-        <li><strong>Adobe Experience Platform:</strong> used AEP schemas and datastreams to structure and route tracking data for downstream analysis.</li>
-        <li><strong>Customer Journey Analytics:</strong> configured CJA connections and data views, mapped user journeys, found drop-off points and quantified business impact for stakeholders.</li>
-        <li><strong>Data quality:</strong> ran routine validation checks to catch anomalies and clean datasets, keeping tracking accurate across digital properties.</li>
-        <li><strong>Documentation:</strong> wrote technical specifications, tracking requirements and reporting guidelines so teams implement and interpret data consistently.</li>
-        <li><strong>Collaboration:</strong> worked with developers, marketers and business teams to turn business questions into data requirements and clear recommendations.</li>
+        <li class="rv"><strong>Web data collection:</strong> designed and deployed tracking with Adobe Data Collection and Adobe Launch across multiple client websites for a pharmaceutical company, capturing page-level events and custom data. Tested every implementation to improve accuracy and close reporting gaps.</li>
+        <li class="rv"><strong>Adobe Experience Platform:</strong> used AEP schemas and datastreams to structure and route tracking data for downstream analysis.</li>
+        <li class="rv"><strong>Customer Journey Analytics:</strong> configured CJA connections and data views, mapped user journeys, found drop-off points and quantified business impact for stakeholders.</li>
+        <li class="rv"><strong>Data quality:</strong> ran routine validation checks to catch anomalies and clean datasets, keeping tracking accurate across digital properties.</li>
+        <li class="rv"><strong>Documentation:</strong> wrote technical specifications, tracking requirements and reporting guidelines so teams implement and interpret data consistently.</li>
+        <li class="rv"><strong>Collaboration:</strong> worked with developers, marketers and business teams to turn business questions into data requirements and clear recommendations.</li>
       </ul>
     </div>
   </div>
 </section>
 
 <section id="projects">
-  <div class="sh"><h2>Projects</h2><p>Dashboards built end to end, from data cleaning to the metrics that drive decisions.</p></div>
+  <div class="sh rv"><div class="sn">03</div><h2>Featured Projects</h2><p>Dashboards built end to end, from data cleaning to the metrics that drive decisions.</p></div>
   <div class="grid2">
-    <article class="card proj">
+    <article class="card proj rv">
       <h3>Credit Card Financial Data Analysis</h3>
       <div class="tags"><span>Power BI</span><span>DAX</span><span>Power Query</span></div>
       <p>Analyzed credit card transaction data to identify spending patterns, detect anomalies and support credit risk management. Built interactive dashboards using Power Query for cleaning and DAX for calculated metrics.</p>
       <a class="l" href="https://github.com/anurag-gupta66/Credit-Card-Financial-Analysis" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">&rarr;</span></a>
     </article>
-    <article class="card proj">
+    <article class="card proj rv">
       <h3>Amazon Prime User Retention Dashboard</h3>
       <div class="tags"><span>Excel</span><span>Power Query</span></div>
       <p>Cleaned and transformed customer datasets to analyze subscription retention and user behavior. Built dynamic dashboards that surfaced retention patterns and supported recommendations to improve the customer experience.</p>
@@ -186,23 +240,27 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
 </section>
 
 <section id="skills">
-  <div class="sh"><h2>Skills</h2></div>
+  <div class="sh rv"><div class="sn">04</div><h2>Skills &amp; Tools</h2></div>
   <div class="grid2">
-    <div class="card skill"><h3>Web data &amp; tracking</h3><div class="chips"><span>Adobe Data Collection</span><span>Adobe Launch</span><span>Adobe Experience Platform</span><span>Customer Journey Analytics</span><span>Adobe Analytics</span></div></div>
-    <div class="card skill"><h3>Data analysis</h3><div class="chips"><span>SQL (MySQL)</span><span>Advanced Excel</span><span>PivotTables</span><span>Power Query</span><span>Power BI</span><span>DAX</span></div></div>
-    <div class="card skill"><h3>Core competencies</h3><div class="chips"><span>Data lifecycle management</span><span>Anomaly detection</span><span>Problem-solving</span><span>Documentation</span></div></div>
-    <div class="card skill"><h3>Tools</h3><div class="chips"><span>Google Workspace</span><span>GitHub</span></div></div>
+    <div class="card skill rv"><h3>Web data &amp; tracking</h3><div class="chips"><span>Adobe Data Collection</span><span>Adobe Launch</span><span>Adobe Experience Platform</span><span>Customer Journey Analytics</span><span>Adobe Analytics</span></div></div>
+    <div class="card skill rv"><h3>Data analysis</h3><div class="chips"><span>SQL (MySQL)</span><span>Advanced Excel</span><span>PivotTables</span><span>Power Query</span><span>Power BI</span><span>DAX</span></div></div>
+    <div class="card skill rv"><h3>Core competencies</h3><div class="chips"><span>Data lifecycle management</span><span>Anomaly detection</span><span>Problem-solving</span><span>Documentation</span></div></div>
+    <div class="card skill rv"><h3>Tools</h3><div class="chips"><span>Google Workspace</span><span>GitHub</span></div></div>
   </div>
 </section>
 
 <section id="credentials">
-  <div class="sh"><h2>Education &amp; certifications</h2></div>
+  <div class="sh rv"><div class="sn">05</div><h2>Education &amp; Certifications</h2></div>
   <div class="grid2">
-    <div class="card edu">
+    <div class="card edu rv">
+      <div class="eicon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.7 3.1 3.3 7 3.3s7-1.6 7-3.3v-4l-7 3.8-7-3.8z"/></svg></div>
+      <div class="ey">2022</div>
       <h3>Bachelor of Business Administration, Marketing</h3>
-      <p>VNSGU, Surat · 2022</p>
+      <p class="eu">VNSGU, Surat</p>
+      <div class="eline"></div>
+      <div class="chips"><span>Marketing</span><span>Business analysis</span><span>Stakeholder communication</span></div>
     </div>
-    <div class="card"><ul class="certs">
+    <div class="card certs-card rv"><ul class="certs">
       <li><div><b>Adobe CJA Developer</b><span>Adobe Customer Journey Analytics</span></div><a class="cv" href="https://drive.google.com/file/d/176kkjLPAwRw1GDCXfoRGpOmWFmzLZ7RO/view?usp=drive_link" target="_blank" rel="noopener" aria-label="View certificate: Adobe CJA Developer">View certificate &#8599;</a></li>
       <li><div><b>Excel Skills</b><span>JP Morgan Chase &amp; Co. Virtual Experience</span></div><a class="cv" href="https://drive.google.com/file/d/1BuU921DX7lxExfyqHKLS8rb3pcmRHtW_/view?usp=drive_link" target="_blank" rel="noopener" aria-label="View certificate: Excel Skills">View certificate &#8599;</a></li>
       <li><div><b>Power BI Simulation</b><span>PwC Switzerland</span></div><a class="cv" href="https://drive.google.com/file/d/1dixq-I9cavl8ph_v15k7wmbe0kQDflrM/view?usp=drive_link" target="_blank" rel="noopener" aria-label="View certificate: Power BI Simulation">View certificate &#8599;</a></li>
@@ -215,11 +273,12 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <h2>Let’s work together</h2>
+    <h2 class="rv">Let’s work together</h2>
     <p>I’m looking for my next role in digital analytics and data implementation. Send me a message and I’ll get back to you.</p>
     <div class="btns" style="justify-content:center">
       <a class="btn p" href="mailto:anuraggupta7237@gmail.com">anuraggupta7237@gmail.com</a>
-      <a class="btn s" href="tel:+919601654610" aria-label="Call +91 98765 43210">&#9742; +91 98765 43210</a>
+      <!-- TODO: replace the dummy number below (in both href and text) with your real number -->
+      <a class="btn s" href="tel:+919876543210" aria-label="Call +91 98765 43210">&#9742; +91 98765 43210</a>
     </div>
     <div class="social">
       <a href="https://www.linkedin.com/in/anurag-gupta66/" target="_blank" rel="noopener" aria-label="LinkedIn: anurag-gupta66"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>/anurag-gupta66</a>
@@ -228,6 +287,25 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
   </div>
 </section>
 <footer>© <span id="y"></span> Anurag Gupta</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+document.documentElement.classList.add('js');
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // stagger delay per parent
+  var seen=new Map();
+  document.querySelectorAll('.rv').forEach(function(el){var n=seen.get(el.parentNode)||0;el.style.setProperty('--rd',(n*0.1)+'s');seen.set(el.parentNode,n+1)});
+  function countUp(el){var t=+el.dataset.count,i=0;if(rm){el.textContent=t;return}var iv=setInterval(function(){i++;el.textContent=i;if(i>=t)clearInterval(iv)},450)}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;el.classList.add('in');io.unobserve(el);
+    el.querySelectorAll('[data-count]').forEach(countUp);
+    setTimeout(function(){el.classList.remove('rv','in')},1600)})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  // scroll progress + active nav
+  var bar=document.getElementById('bar'),links=[].slice.call(document.querySelectorAll('nav ul a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+    var y=h.scrollTop+140,cur=-1;secs.forEach(function(sc,i){if(sc&&sc.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('act',i===cur)})}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
 </body>
 </html>
