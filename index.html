@@ -19,6 +19,8 @@
 html{scroll-behavior:smooth;scroll-padding-top:84px;font-size:106.25%}
 body{font-family:var(--f);color:var(--body);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
 a{color:var(--blue)}
+p,.job li{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+.contact p{text-align-last:center}
 :focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
 /* nav */
@@ -35,7 +37,7 @@ nav ul a:hover{color:#fff}
 .navcta{background:var(--cyan);color:var(--navy);font-weight:700;font-size:.9rem;padding:8px 18px;border-radius:999px;text-decoration:none}
 /* hero */
 .hero{background:radial-gradient(700px 380px at 85% 0,#1f5eff55,transparent 65%),linear-gradient(180deg,var(--navy),var(--navy2));color:#cfd9ee;padding:84px 0 96px}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(66,198,255,.12);border:1px solid rgba(66,198,255,.35);color:#9fe1ff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:22px}
 .badge b{width:8px;height:8px;border-radius:50%;background:#3ee08f;box-shadow:0 0 0 4px rgba(62,224,143,.2)}
 .hero h1{color:#fff;font-size:clamp(2.6rem,7vw,4.4rem);line-height:1.05;letter-spacing:-.035em;font-weight:800}
@@ -50,10 +52,10 @@ nav ul a:hover{color:#fff}
 .social a{display:inline-flex;align-items:center;gap:9px;color:#dbe5f7;text-decoration:none;font-weight:600;font-size:.93rem;border:1px solid rgba(255,255,255,.2);padding:8px 16px 8px 12px;border-radius:999px}
 .social a:hover{border-color:var(--cyan);color:#fff}
 .social svg{width:19px;height:19px;fill:currentColor}
-.snippet{background:#08122a;border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.4);overflow:hidden;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:.82rem}
-.snippet .bar{display:flex;gap:7px;align-items:center;padding:12px 16px;background:#0d1b38;color:#7f93b8;font-size:.76rem}
-.snippet .bar i{width:10px;height:10px;border-radius:50%;background:#2c3d63;display:inline-block}
-.snippet pre{padding:18px 20px;color:#c4d2ee;line-height:1.75;overflow-x:auto}
+.snippet{background:#08122a;border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.4);overflow:hidden;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:1.02rem}
+.snippet .bar{display:flex;gap:8px;align-items:center;padding:16px 22px;background:#0d1b38;color:#7f93b8;font-size:.9rem}
+.snippet .bar i{width:12px;height:12px;border-radius:50%;background:#2c3d63;display:inline-block}
+.snippet pre{padding:28px 30px;color:#c4d2ee;line-height:1.85;overflow-x:auto}
 .k{color:#ff9ac1}.s2{color:#9be59b}.c{color:#6c7fa6}.f{color:#7cc7ff}
 /* stats */
 .stats{margin-top:-44px;position:relative;z-index:2}
@@ -65,7 +67,7 @@ nav ul a:hover{color:#fff}
 section{padding:84px 0 0}
 .sh{margin-bottom:32px}
 .sh h2{color:var(--ink);font-size:2.2rem;letter-spacing:-.03em;font-weight:800}
-.sh p{margin-top:8px;max-width:62ch;font-size:1.08rem}
+.sh p{margin-top:8px;max-width:none;font-size:1.08rem}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
 .job{display:grid;grid-template-columns:200px 1fr;gap:32px}
 .job .when{color:var(--blue);font-weight:700}
@@ -150,7 +152,7 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
 
 @media(prefers-reduced-motion:reduce){.up,.snippet,.ln,.orb,.badge b,.cur{animation:none!important;opacity:1!important}.js .rv{opacity:1;transform:none}}
 @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.snippet{max-width:520px}.stats .wrap{grid-template-columns:1fr 1fr}.job{grid-template-columns:1fr;gap:14px}nav ul{display:none}}
-@media(max-width:480px){.hero{padding:56px 0 80px}.stats .wrap{grid-template-columns:1fr}}
+@media(max-width:480px){.snippet{font-size:.8rem}.snippet pre{padding:20px}.hero{padding:56px 0 80px}.stats .wrap{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media print{nav,.contact .btns{display:none}}
 </style>
@@ -278,7 +280,7 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
     <div class="btns" style="justify-content:center">
       <a class="btn p" href="mailto:anuraggupta7237@gmail.com">anuraggupta7237@gmail.com</a>
       <!-- TODO: replace the dummy number below (in both href and text) with your real number -->
-      <a class="btn s" href="tel:+919876543210" aria-label="Call +91 98765 43210">&#9742; +91 98765 43210</a>
+      <a class="btn s" href="tel:+919601654610" aria-label="Call +91 96016 54610">&#9742; +91 98765 43210</a>
     </div>
     <div class="social">
       <a href="https://www.linkedin.com/in/anurag-gupta66/" target="_blank" rel="noopener" aria-label="LinkedIn: anurag-gupta66"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>/anurag-gupta66</a>
