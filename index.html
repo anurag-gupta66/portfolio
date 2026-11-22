@@ -34,7 +34,7 @@ nav ul a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width
 nav ul a:hover::after,nav ul a.act::after{transform:scaleX(1)}
 nav ul a.act{color:#fff}
 nav ul a:hover{color:#fff}
-.navcta{background:var(--cyan);color:var(--navy);font-weight:700;font-size:.9rem;padding:8px 18px;border-radius:999px;text-decoration:none}
+.navcta{background:var(--cyan);color:var(--navy);font-weight:700;font-size:.9rem;padding:10px 20px;border-radius:12px;text-decoration:none}
 /* hero */
 .hero{background:radial-gradient(700px 380px at 85% 0,#1f5eff55,transparent 65%),linear-gradient(180deg,var(--navy),var(--navy2));color:#cfd9ee;padding:84px 0 96px}
 .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -44,14 +44,13 @@ nav ul a:hover{color:#fff}
 .hero h2{color:var(--cyan);font-size:1.4rem;font-weight:600;margin:12px 0 20px;letter-spacing:-.01em}
 .hero p{max-width:54ch;font-size:1.15rem}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-block;padding:13px 24px;border-radius:12px;font-weight:700;font-size:.96rem;text-decoration:none;transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn.p{background:var(--cyan);color:var(--navy)}
-.btn.s{border:1.5px solid rgba(255,255,255,.35);color:#fff}
 .social{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.social a{display:inline-flex;align-items:center;gap:9px;color:#dbe5f7;text-decoration:none;font-weight:600;font-size:.93rem;border:1px solid rgba(255,255,255,.2);padding:8px 16px 8px 12px;border-radius:999px}
-.social a:hover{border-color:var(--cyan);color:#fff}
-.social svg{width:19px;height:19px;fill:currentColor}
+.btn,.social a{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:12px;font-family:inherit;font-weight:700;font-size:.96rem;line-height:1;text-decoration:none;white-space:nowrap;border:1.5px solid transparent;transition:transform .2s,border-color .2s,box-shadow .2s}
+.btn.p{background:var(--cyan);color:var(--navy);border-color:var(--cyan)}
+.btn.s,.social a{border-color:rgba(255,255,255,.35);color:#fff}
+.btn:hover,.social a:hover{transform:translateY(-3px)}
+.btn.s:hover,.social a:hover{border-color:var(--cyan)}
+.btn svg,.social svg{width:20px;height:20px;fill:currentColor;flex:none}
 .snippet{background:#08122a;border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.4);overflow:hidden;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:1.02rem}
 .snippet .bar{display:flex;gap:8px;align-items:center;padding:16px 22px;background:#0d1b38;color:#7f93b8;font-size:.9rem}
 .snippet .bar i{width:12px;height:12px;border-radius:50%;background:#2c3d63;display:inline-block}
@@ -94,7 +93,7 @@ section{padding:84px 0 0}
 .certs li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:nowrap}
 .certs li>div{flex:1;min-width:0}
 .certs li span{display:block;font-size:.95rem}
-.cv{font-weight:700;font-size:.92rem;text-decoration:none;white-space:nowrap;flex:none;border:1px solid var(--line);border-radius:999px;padding:5px 14px}
+.cv{font-weight:700;font-size:.92rem;text-decoration:none;white-space:nowrap;flex:none;border:1px solid var(--line);border-radius:12px;padding:7px 16px}
 .cv:hover{border-color:var(--blue);background:#eaf1ff}
 .certs li:last-child{border:0}
 .certs b{color:var(--ink)}
@@ -147,13 +146,12 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
 .proj:hover,.skill:hover,.stat:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(31,94,255,.14);border-color:#b9ccff}
 .chips span,.tags span{transition:transform .2s,background .2s}
 .chips span:hover,.tags span:hover{transform:translateY(-3px) scale(1.05);background:#dbe7ff}
-.social a{transition:transform .2s,border-color .2s,color .2s}.social a:hover{transform:translateY(-3px)}
 .certs li{transition:padding-left .25s}.certs li:hover{padding-left:8px}
 .btn.p:hover{box-shadow:0 10px 26px rgba(66,198,255,.4)}
 
 @media(prefers-reduced-motion:reduce){.up,.snippet,.ln,.orb,.badge b,.cur{animation:none!important;opacity:1!important}.js .rv{opacity:1;transform:none}}
 @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.snippet{max-width:520px}.stats .wrap{grid-template-columns:1fr 1fr}.job{grid-template-columns:1fr;gap:14px}nav ul{display:none}}
-@media(max-width:480px){.snippet{font-size:.8rem}.snippet pre{padding:20px}.hero{padding:56px 0 80px}.stats .wrap{grid-template-columns:1fr}}
+@media(max-width:480px){.btn,.social a{white-space:normal;width:100%;padding:0 18px}.snippet{font-size:.8rem}.snippet pre{padding:20px}.hero{padding:56px 0 80px}.stats .wrap{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media print{nav,.contact .btns{display:none}}
 </style>
@@ -171,7 +169,7 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
     <div class="badge up" style="--i:0"><b></b>Open to new opportunities</div>
     <h1 class="up" style="--i:1">Anurag Gupta</h1>
     <h2 class="up" style="--i:2">Digital Data &amp; Analytics Engineer</h2>
-    <p class="up" style="--i:3">I build the tracking that makes digital data trustworthy: Adobe Launch implementations, Adobe Experience Platform data flows and Customer Journey Analytics reports that show teams where users drop off. Two years of hands-on experience, currently delivering for a pharmaceutical client at Aloola.</p>
+    <p class="up" style="--i:3">I build the tracking that makes digital data trustworthy: Adobe Launch implementations, Adobe Experience Platform data flows and Customer Journey Analytics reports that show teams where users drop off. Two years of hands-on experience.</p>
     <div class="btns up" style="--i:4">
       <a class="btn p" href="#contact">Get in touch</a>
       <a class="btn s" href="https://drive.google.com/file/d/1AVCk2FEeN_d_ddgoAx3JbU4vP9oj3EjH/view?usp=sharing" target="_blank" rel="noopener">Download resume</a>
@@ -213,7 +211,7 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
     <div>
       <h3>Software Engineer, Digital Data &amp; Analytics</h3>
       <ul>
-        <li class="rv"><strong>Web data collection:</strong> Designed and deployed tracking with Adobe Data Collection and Adobe Launch across multiple client websites for a pharmaceutical company, capturing page-level events and custom data. Tested every implementation to improve accuracy and close reporting gaps.</li>
+        <li class="rv"><strong>Web data collection:</strong> Designed and deployed custom tracking with Adobe Data Collection and Adobe Launch across 10+ client websites for a pharmaceutical company, capturing page-level events and custom data. Tested every implementation to improve accuracy and close reporting gaps.</li>
         <li class="rv"><strong>Adobe Experience Platform:</strong> Used AEP schemas and datastreams to structure and route tracking data for downstream analysis.</li>
         <li class="rv"><strong>Customer Journey Analytics:</strong> Configured CJA connections and data views, mapped user journeys, found drop-off points and quantified business impact for stakeholders.</li>
         <li class="rv"><strong>Data quality:</strong> Ran routine validation checks to catch anomalies and clean datasets, keeping tracking accurate across digital properties.</li>
@@ -279,9 +277,8 @@ footer{background:#08122a;color:#7f93b8;text-align:center;padding:22px;font-size
     <h2 class="rv">Let’s work together</h2>
     <p>I’m looking for my next role in digital analytics and data implementation. Send me a message and I’ll get back to you.</p>
     <div class="btns" style="justify-content:center">
-      <a class="btn p" href="mailto:anuraggupta7237@gmail.com">anuraggupta7237@gmail.com</a>
-      <!-- TODO: replace the dummy number below (in both href and text) with your real number -->
-      <a class="btn s" href="tel:+919601654610" aria-label="Call +91 96016 54610">&#9742; +91 98765 43210</a>
+      <a class="btn s" href="mailto:anuraggupta7237@gmail.com" aria-label="Email anuraggupta7237@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.3.2L12 11.6l7.7-5.9A.5.5 0 0 0 19.5 5h-15a.5.5 0 0 0-.2.7zM20 8.1l-7.4 5.7a1 1 0 0 1-1.2 0L4 8.1v10.4c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V8.1z"/></svg>anuraggupta7237@gmail.com</a>
+      <a class="btn s" href="tel:+919601654610" aria-label="Call +91 96016 54610"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1l-2.2 2.2z"/></svg>+91 96016 54610</a>
     </div>
     <div class="social">
       <a href="https://www.linkedin.com/in/anurag-gupta66/" target="_blank" rel="noopener" aria-label="LinkedIn: anurag-gupta66"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>/anurag-gupta66</a>
